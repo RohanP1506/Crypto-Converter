@@ -30,6 +30,8 @@ def GraphGenerator():
   for keys, values in getCoinData(convertCoin(coin2), years).items():
     secondmoney.append(values)
 
+  
+
 
   graphdata = {
     'firstCoin': getCoinData(convertCoin(coin1), years),

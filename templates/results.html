@@ -18,7 +18,7 @@
       <canvas id="coin2-chart"></canvas>
     </center>
     <center>
-      <h3>{{data.coin1}} Prices:</h3>
+      <h1>Data Table</h1>
       <table>
         <tr>
           <th>Date</th>
@@ -26,7 +26,7 @@
           <th>{{data.coin2}} Price</th>
 
         </tr>
-      {% for keys, value in data.combined %}
+      {% for keys, value in data.combined.items() %}
         <tr>
           <td>{{keys}}</td>
           <td>${{value[0]}}</td>
@@ -35,22 +35,6 @@
       {% endfor %}
       </table>
     </center>
-      <!--
-      <div class="child">
-      <h3>{{data.coin2}} Prices:</h3>
-      <table>
-        <tr>
-          <th>Date</th>
-          <th>Price</th>
-        </tr>
-      {% for keys, value in data.secondCoin.items() %}
-        <tr>
-          <td>{{keys}}</td>
-          <td>${{value}}</td>
-        </tr>
-      {% endfor %}
-      </table>
-    -->
     <script>
 new Chart(document.getElementById("coin1-chart"), {
 type: 'line',
