@@ -1,6 +1,4 @@
-from flask import Flask, render_template, url_for, request
-import datetime
-from pycoingecko import CoinGeckoAPI
+from flask import Flask, render_template, request
 from functions import *
 
 app = Flask('Crypto Comparer',
