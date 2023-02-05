@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crypto Comparer</title>
+    <link rel="stylesheet" href="static/css/styles.css">
+    <link rel="icon" type="image/x-icon" href="static/assets/crypto.png">
+  </head>
+  <body>
+    <center>
+      <h1>Crypto Converter</h1>
+    </center>
+    <center>
+      <form action="{{ url_for('GraphGenerator') }}" method="POST">
+        <input type="text" list="coins1" name='first' placeholder="Enter the first cryptocurrency"/>
+        
+        <datalist id="coins1">
+        {% for names in data.supportedcoins %}
+        <option>{{names}}</option>
+        {% endfor %}
+        </datalist>
+        
+        </input>
+        <input type="text" name='second' list="coins2" placeholder="Enter the second cryotocurrency"/>
+        
+        <datalist id="coins2">
+        {% for names in data.supportedcoins %}
+        <option>{{names}}</option>
+        {% endfor %}
+        </datalist>
+        
+        </input>
+        <input type='number' name='third' placeholder='Enter the years the graph will go back to' min='1' max='5'>
+        <br>
+        <button type="submit">Submit</button>
+      </form>
+    </center>
+  </body>
+</html>
