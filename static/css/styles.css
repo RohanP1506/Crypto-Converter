@@ -90,6 +90,5 @@ tr:nth-child(even) {
 }
 
 .thingy {
-  padding: 40px;
   border-bottom: 2px solid black;
 }
