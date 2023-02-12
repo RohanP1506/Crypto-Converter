@@ -86,5 +86,10 @@ tr:nth-child(even) {
   border-radius: 25px;
   pointer-events: none;
   width: 275px;
-  height: 275px;
+  height: 275x;
+}
+
+.thingy {
+  padding: 40px;
+  border-bottom: 2px solid black;
 }
