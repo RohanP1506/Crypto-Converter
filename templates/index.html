@@ -11,8 +11,9 @@
       <h1>Crypto Converter</h1>
     </center>
     <center>
+      <div class="thingy">
       <form action="{{ url_for('GraphGenerator') }}" method="POST">
-        <input type="text" list="coins1" name='first' placeholder="Enter the first cryptocurrency"/>
+        <input type="text" list="coins1" name='first' placeholder="Coin #1"/>
         
         <datalist id="coins1">
         {% for names in data.supportedcoins %}
@@ -21,7 +22,7 @@
         </datalist>
         
         </input>
-        <input type="text" name='second' list="coins2" placeholder="Enter the second cryotocurrency"/>
+        <input type="text" name='second' list="coins2" placeholder="Coin #2"/>
         
         <datalist id="coins2">
         {% for names in data.supportedcoins %}
@@ -30,7 +31,7 @@
         </datalist>
         
         </input>
-        <input type='number' name='third' placeholder='Enter the years the graph will go back to' min='1' max='5'>
+        <input type='number' name='third' placeholder='Years' min='1' max='10'>
         <br>
         <button type="submit">Submit</button>
       </form>
@@ -38,12 +39,13 @@
       <br>
       <center>
         <br>
+      </div>
         <br>
         <br>
         <h1>Instructions</h1>
         <p><b>1.</b> In the first box, enter the first cryptocurrency that you'd like to compare</p>
         <p><b>2.</b> In the second box, enter the second cryptocurrency that you'd like to compare</p>
-        <p><b>3.</b> In the third box, enter the amount of years you'd like the graphs and table to go back by (historical data of both coins)
+        <p><b>3.</b> In the third box, enter the amount of years you'd like the graphs and table to go back by (historical data of both coins). The maximum is 10 years.</p>
         <p><b>4.</b> Press Submit and view your results</p>
         <br>
         <button onclick="window.location.href='/about';">About the Creators</button>
