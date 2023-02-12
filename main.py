@@ -1,3 +1,4 @@
+from concurrent.futures import ThreadPoolExecutor
 from flask import Flask, render_template, request
 from functions import *
 
@@ -21,31 +22,28 @@ def GraphGenerator():
   dates = []
   firstmoney = []
   secondmoney = []
-  for keys, values in getCoinData(convertCoin(coin1), years).items():
-    dates.append(keys)
-    firstmoney.append(values)
-  
-  for keys, values in getCoinData(convertCoin(coin2), years).items():
-    secondmoney.append(values)
-
-  
-
+  with ThreadPoolExecutor as executor:
+    for keys, values in getCoinData(convertCoin(coin1), years).items():
+      dates.append(keys)
+      firstmoney.append(values)
+    for keys, values in getCoinData(convertCoin(coin2), years).items():
+      secondmoney.append(values)
 
   graphdata = {
-    'firstCoin': getCoinData(convertCoin(coin1), years),
-    'secondCoin': getCoinData(convertCoin(coin2), years),
     'firstmoney': firstmoney,
     'dates': dates,
     'secondmoney': secondmoney,
     'coin1': coin1,
     'coin2': coin2,
     'combined': combine(convertCoin(coin1), convertCoin(coin2), years)
-
   }
-
   return render_template('results.html', data = graphdata)
 
+
+
+@app.route('/about', methods=['GET', 'POST'])
+def about():
+  return render_template("about.html")
+
 app.run(host='0.0.0.0', port=6969)
-
-
 
