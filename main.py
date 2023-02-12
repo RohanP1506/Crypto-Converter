@@ -22,12 +22,11 @@ def GraphGenerator():
   dates = []
   firstmoney = []
   secondmoney = []
-  with ThreadPoolExecutor as executor:
-    for keys, values in getCoinData(convertCoin(coin1), years).items():
-      dates.append(keys)
-      firstmoney.append(values)
-    for keys, values in getCoinData(convertCoin(coin2), years).items():
-      secondmoney.append(values)
+  for keys, values in getCoinData(convertCoin(coin1), years).items():
+    dates.append(keys)
+    firstmoney.append(values)
+  for keys, values in getCoinData(convertCoin(coin2), years).items():
+    secondmoney.append(values)
 
   graphdata = {
     'firstmoney': firstmoney,
