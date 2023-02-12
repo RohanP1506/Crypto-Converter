@@ -1,7 +1,11 @@
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
 body {
   margin: 0;
   padding: 30px;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: black;
   background-color: lightblue;
 }
@@ -75,4 +79,12 @@ tr:nth-child(even) {
 .child {
   display: inline-block;
   padding: 25px;
+}
+
+#image {
+  border: 5px solid black;
+  border-radius: 25px;
+  pointer-events: none;
+  width: 275px;
+  height: 275px;
 }

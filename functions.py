@@ -61,18 +61,16 @@ def getCoinData(coin, years):
     count += 1
   return finalList
 
+# full dict
 def combine(coin1, coin2, year):
-  
-  json1, json2 =getCoinData(coin1, year), getCoinData(coin2, year)
-  output={}
+  json1, json2 = getCoinData(coin1, year), getCoinData(coin2, year)
+  output = {}
   for key in json1.keys():
-    output[key] = [
-      json1[key],
-      json2[key]
-    ]
+    output[key] = [json1[key], json2[key]]
   return output
 
-#name and ids
+
+# Name and ids
 def convertCoin(id):
   coins = cg.get_coins_list()
   for coin in coins:
