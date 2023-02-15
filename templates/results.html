@@ -13,9 +13,11 @@
       <h1>Graph Results</h1> 
       <button onclick="window.location.href='/';">Go Back</button>
     </center>
-    <center>
-      <canvas id="coin1-chart"></canvas>
-      <canvas id="coin2-chart"></canvas>
+    <center class="tables">
+      <br>
+      <canvas id="coin1-chart" class="transparent"></canvas>
+      <br>
+      <canvas id="coin2-chart" class="transparent"></canvas>
     </center>
     <center>
       <h1>Data Table</h1>
@@ -105,5 +107,5 @@ text: {{data.coin2 | tojson}}
 });
 </script>
   </body>
-  <script defer src='https://app.embed.im/snow.js'></script>
+  <script defer src='static/js/snow.js'></script>
 </html>
