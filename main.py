@@ -44,4 +44,5 @@ def about():
   return render_template("about.html")
 
 
-app.run(host='0.0.0.0', port=6969)
+app.run(host='0.0.0.0', port=6969, threaded=True)
+# I saw an article about how apparently this speeds up the load speed by a lot, wanna try it
