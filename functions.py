@@ -4,6 +4,7 @@ import time
 
 cg = CoinGeckoAPI()
 
+
 #list of ALL formatted dates, use for GRAPH
 def getFormattedDates(datelist):
   formatted_list = []
@@ -13,11 +14,13 @@ def getFormattedDates(datelist):
     formatted_list.append(dateUS)
   return formatted_list
 
+
 #per date format, used to correctly call data
 def formatDate(date):
   timestamp = datetime.datetime.fromtimestamp(date)
   dateUS = timestamp.strftime('%m-%d-%Y')
   return dateUS
+
 
 #dates for unix conv, call data
 def getListDates(limit):
@@ -35,6 +38,7 @@ def getListDates(limit):
     year += 1
   return datelist
 
+
 #unix codes, call data
 def getUNIXDates(datelist):
   unix_list = []
@@ -43,6 +47,7 @@ def getUNIXDates(datelist):
     unix = time.mktime(oneDate.timetuple())
     unix_list.append(int(unix))
   return unix_list
+
 
 # coin data
 def getCoinData(coin, years):
@@ -61,6 +66,7 @@ def getCoinData(coin, years):
     count += 1
   return finalList
 
+
 # full dict
 def combine(coin1, coin2, year):
   json1, json2 = getCoinData(coin1, year), getCoinData(coin2, year)
@@ -77,6 +83,7 @@ def convertCoin(id):
     if coin['name'] == id:
       return coin['id']
   return -1
+
 
 def getSupportedCoins():
   supportedlist = []
